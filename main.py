@@ -18,6 +18,8 @@ if "preach_count" not in st.session_state:
     st.session_state.preach_count = 0
 if "achievements" not in st.session_state:
     st.session_state.achievements = []
+if "luxury_unlocked" not in st.session_state:
+    st.session_state.luxury_unlocked = []
 
 # --- PREMIUM COHESIVE PASTEL CSS INJECTIONS ---
 st.markdown("""
@@ -28,11 +30,9 @@ st.markdown("""
     .main-title { font-family: 'Fredoka One', cursive; font-size: 44px !important; font-weight: 800; color: #FF69B4; text-align: center; text-shadow: 2px 2px 0px #FFF; margin-bottom: 2px; }
     .subtitle { font-size: 15px !important; text-align: center; font-style: italic; color: #7B1FA2; font-weight: 700; margin-bottom: 25px; }
     
-    /* Premium Instagram Replica Chat Bubbles Layout Styles */
     .chat-bubble-goddess { background-color: #2A2A2A; color: #FFFFFF; padding: 14px 18px; border-radius: 20px 20px 20px 5px; margin: 10px 0px; border: 2px dashed #FF69B4; max-width: 85%; font-weight: 600; font-size: 0.95rem; }
     .chat-bubble-messenger { background-color: #F3E5F5; color: #4A148C; padding: 14px 18px; border-radius: 20px 20px 5px 20px; margin: 10px 0px; margin-left: auto; text-align: right; max-width: 85%; font-weight: 700; border: 2px dashed #B388FF; font-size: 0.95rem; }
     
-    /* Layout Interface Cards */
     .luxury-card { background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%); border: 2px solid #FFC107; padding: 18px; border-radius: 16px; color: #FF8F00; font-weight: 700; margin: 12px 0px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); text-align: center;}
     .locked-card { background: #F5F5F5; border: 2px dashed #BDBDBD; padding: 15px; border-radius: 16px; color: #757575; font-weight: 700; margin: 12px 0px; text-align: center; opacity: 0.6; }
     .memory-box { background: rgba(255, 255, 255, 0.85); border: 2px solid #E1BEE7; padding: 18px; border-radius: 18px; color: #4A148C; margin: 12px 0px; font-weight: 600; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
@@ -126,3 +126,4 @@ with tab3:
     with col_sim2:
         if st.button("📸 Trigger dormant photography account", use_container_width=True):
             st.markdown('<div class="visual-bubble">🌅📷🌅</div>', unsafe_allow_html=True)
+    
