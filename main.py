@@ -30,9 +30,11 @@ st.markdown("""
     .main-title { font-family: 'Fredoka One', cursive; font-size: 44px !important; font-weight: 800; color: #FF69B4; text-align: center; text-shadow: 2px 2px 0px #FFF; margin-bottom: 2px; }
     .subtitle { font-size: 15px !important; text-align: center; font-style: italic; color: #7B1FA2; font-weight: 700; margin-bottom: 25px; }
     
+    /* Premium Instagram Replica Chat Bubbles Layout Styles */
     .chat-bubble-goddess { background-color: #2A2A2A; color: #FFFFFF; padding: 14px 18px; border-radius: 20px 20px 20px 5px; margin: 10px 0px; border: 2px dashed #FF69B4; max-width: 85%; font-weight: 600; font-size: 0.95rem; }
     .chat-bubble-messenger { background-color: #F3E5F5; color: #4A148C; padding: 14px 18px; border-radius: 20px 20px 5px 20px; margin: 10px 0px; margin-left: auto; text-align: right; max-width: 85%; font-weight: 700; border: 2px dashed #B388FF; font-size: 0.95rem; }
     
+    /* Layout Interface Cards */
     .luxury-card { background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%); border: 2px solid #FFC107; padding: 18px; border-radius: 16px; color: #FF8F00; font-weight: 700; margin: 12px 0px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); text-align: center;}
     .locked-card { background: #F5F5F5; border: 2px dashed #BDBDBD; padding: 15px; border-radius: 16px; color: #757575; font-weight: 700; margin: 12px 0px; text-align: center; opacity: 0.6; }
     .memory-box { background: rgba(255, 255, 255, 0.85); border: 2px solid #E1BEE7; padding: 18px; border-radius: 18px; color: #4A148C; margin: 12px 0px; font-weight: 600; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
@@ -95,7 +97,6 @@ with tab2:
             st.warning("🔮 \"Partially correct da! Just one or two characters u have to change! I won\'t reveal, chill!\" 🤭")
         else:
             st.error("❌ \"Now u r completely wrong!!! Try using your introverted intuition to guess!\"")
-
 # ================= TAB 3: DIAGNOSTIC APPARATUS =================
 with tab3:
     st.write("### 🎭 The Sibling & Aunt Therapy Diagnostic Simulator")
@@ -126,4 +127,106 @@ with tab3:
     with col_sim2:
         if st.button("📸 Trigger dormant photography account", use_container_width=True):
             st.markdown('<div class="visual-bubble">🌅📷🌅</div>', unsafe_allow_html=True)
+            st.warning("📍 System notice: glimpses.of.gaia account momentarily sparked to life via a phone camera scan!")
+
+# ================= TAB 4: ALTAR VALUE MONITOR =================
+with tab4:
+    st.write("### 🌯 The Dynamic Altar Inventory Monitor")
+    st.caption("Slide to change offerings and see her active luxury daydream list update live:")
     
+    count = st.slider("Select quantity of wrapped meats to place on the slab:", 0, 50, 10, step=5)
+    tokens = count // 10
+    
+    st.write("#### 💎 Live Wishlist Status Indicator:")
+    
+    if count >= 10:
+        st.markdown('<div class="luxury-card">🧼 Tier 1 UNLOCKED: Having a good bubble bath in a luxury bathtub! 🛁🫧</div>', unsafe_allow_html=True)
+    else:
+        st.markdown('<div class="locked-card">🔒 Tier 1 LOCKED: Bubble Bath requires at least 10 shawarmas.</div>', unsafe_allow_html=True)
+        
+    if count >= 20:
+        st.markdown('<div class="luxury-card">👠 Tier 2 UNLOCKED: Buying Prada, Gucci, and Louis Vuitton heels... thats the life! 🛍️</div>', unsafe_allow_html=True)
+    else:
+        st.markdown('<div class="locked-card">🔒 Tier 2 LOCKED: Designer High Heels require at least 20 shawarmas.</div>', unsafe_allow_html=True)
+        
+    if count >= 30:
+        st.markdown('<div class="luxury-card">🏨 Tier 3 UNLOCKED: Eating luxurious meals at 7-star hotels! Ufffff! 🔥🥂</div>', unsafe_allow_html=True)
+    else:
+        st.markdown('<div class="locked-card">🔒 Tier 3 LOCKED: 7-Star Feast requires at least 30 shawarmas.</div>', unsafe_allow_html=True)
+        
+    st.write("---")
+    if st.button("🔥 Finalize Offering Sacrifices", use_container_width=True):
+        if count < 10:
+            st.error("🚨 TRANSACTION DENIED: Insufficient offering count! Prepare for the slipper shot matrix!")
+        else:
+            st.balloons()
+            st.success(f"🎉 TRANSACTION SECURED! You unlocked {tokens} Advice Tokens! ({count % 10} rolls saved in the shrine vault).")
+            st.info("⚔️ Levi Ackerman Core Principle: 'The only thing we are allowed to do is believe we don't regret our choices.'")
+
+# ================= TAB 5: THE STRATEGY SIMULATOR GAME =================
+with tab5:
+    st.write("### 🎮 The Tree-Sitting Religion Expansion Game")
+    st.caption("Manage operations as the High Priestess to scale the core empire audience worldwide!")
+    
+    s1, s2, s3 = st.columns(3)
+    with s1:
+        st.markdown(f'<div class="game-stat">👥 Followers<br><span style="font-size:20px;">{st.session_state.followers}</span></div>', unsafe_allow_html=True)
+    with s2:
+        st.markdown(f'<div class="game-stat">🌯 Shawarmas<br><span style="font-size:20px;">{st.session_state.shawarmas}</span></div>', unsafe_allow_html=True)
+    with s3:
+        st.markdown(f'<div class="game-stat">🛡️ Muttus<br><span style="font-size:20px;">{st.session_state.muttus_deployed}</span></div>', unsafe_allow_html=True)
+        
+    st.write("---")
+    st.write("#### 🕹️ Core Executive Operations:")
+    
+    btn_col1, btn_col2 = st.columns(2)
+    with btn_col1:
+        if st.button("🌳 Sit Under Tree & Preach to Crowd", use_container_width=True):
+            st.session_state.preach_count += 1
+            new_converts = random.randint(3, 8) * (st.session_state.messengers + 1)
+            st.session_state.followers += new_converts
+            st.session_state.shawarmas += random.randint(2, 5)
+            st.success(f"🧘‍♀️ You sat under a tree! Converted {new_converts} new Chandriyans! They left a stack of Shawarmas.")
+            
+        if st.button("🛡️ Deploy Strategic Muttu Defense", use_container_width=True):
+            st.session_state.muttus_deployed += 1
+            st.session_state.followers += 3
+            st.warning("🤓 Muttu deployed! 'The assistant coach also don't play, right?!' The target audience is expanding.")
+            
+    with btn_col2:
+        if st.button("🤖 Train Kavin into a Messenger", use_container_width=True):
+            if st.session_state.shawarmas >= 10:
+                st.session_state.shawarmas -= 10
+                st.session_state.messengers += 1
+                st.info("🫡 Messenger Kavin upgraded! Future conversions from tree-sitting are now doubled!")
+            else:
+                st.error("🌯 Not enough resources! Training a Messenger costs 10 Shawarmas.")
+                
+        if st.button("🎆 Unleash Cult Fireworks Display", use_container_width=True):
+            if st.session_state.followers >= 15:
+                st.balloons()
+                added = random.randint(10, 25)
+                st.session_state.followers += added
+                st.success(f"🐱 'FIREWORRRKKSSS!!!!!!!! HAPPY HAPPY HAPPY!!!' The sheer festive noise attracted {added} new converts!")
+            else:
+                st.error("👥 You need at least 15 followers to coordinate a fireworks celebration assembly!")
+                
+    # --- THE SECRET GRADUATION CHAMBER APPRECIATION EASTER EGG ---
+    if st.session_state.followers >= 100 and st.session_state.shawarmas >= 30:
+        if "victory" not in st.session_state.achievements:
+            st.session_state.achievements.append("victory")
+            
+        st.write("---")
+        st.markdown('### 🏆 EMPIRE TRIUMPH DETECTED! 🏆', unsafe_allow_html=True)
+        st.balloons()
+        
+        with st.expander("💌 UNLOCK SECRET APPRECIATION VAULT CHAMBER"):
+            st.write("### 💝 High Priest Messenger Kavin's Official Log Entry")
+            st.write(
+                f"Hey, look at that! We actually took a crazy conversation about a funny internet religion, "
+                f"stuck all our inside jokes inside a Python file, and turned it into an absolute empire code dashboard! "
+                f"You really are the absolute best friend anyone could ask for. Thank you for providing that safe space da. "
+                f"Here is to more chaos, terrible decisions, late-night rants, and endless tree-sitting. "
+                f"You are officially certified as the elite ENTJ Goddess forever! 🌸✨"
+            )
+            
